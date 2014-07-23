@@ -452,6 +452,4 @@ class Signature(object):
     
 #Debugging or use as example:    
 # execfile('classi.py');image=GEM_Image();image.open();image.create_emptyRaster();image.pixelProfileToRaster();
-# pixel = GEM_Image(); pixel.open(path='D://My Docs//working//out_test//', filename='test.img');w = pixel.getRowProfile(); w[0,:,:]=1;w[1,:,:]=2;   
-        
-           
+# pixel = GEM_Image(); pixel.open(path='D://My Docs//working//out_test//', filename='test.img');w = pixel.getRowProfile(); w[0,:,:]=1;w[1,:,:]=2;
