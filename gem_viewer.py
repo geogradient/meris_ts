@@ -1,24 +1,15 @@
 #!/usr/bin/env python
+
 __author__ = "Jose M. Beltran <beltran.data@gmail.com>"
 __version__ = "0.2.3"
+import os
+import mmap
 
-import os, sys, mmap
-import numpy as np
-import scipy.stats as stats
-from string import strip
-from itertools import islice, imap, chain, ifilter
 from gem import GEM_Image
-from shapely.geometry import LineString
-
-from PyQt4 import QtCore, QtGui, Qt
-import PyQt4.Qwt5 as Qwt 
-import ui_gem_viewer
-
-from gem_stats import *
-
+import PyQt4
+import jobel_viewer
 from plot_image import *
 from plot_NDVI import *
-from plot_freq import *
 from plot_bar import *
 from xing_table import *
 from simtest_table import *
@@ -30,7 +21,7 @@ class GenerateClassProfiles:
             try:
                 self._datammap = mmap.mmap(ofile.fileno(),0,tagname='signaturefile', access=mmap.ACCESS_READ)
             except ValueError:
-                print 'ERROR: accesing self._datammap'
+                print("ERROR: accesing self._datammap")
     def next(self):
         '''The lower-index slice will decrease its value in 12 bytes to 
         get rid off the header [CLASS000_00,] and upper-index in 2 bytes 
@@ -453,7 +444,7 @@ class Visual_Main(QtGui.QMainWindow, ui_gem_viewer.Ui_GemVisualGUI):
         import xlrd 
         book = xlrd.open_workbook(filename)
         sh = book.sheet_by_index(0) 
-        for r in range(sh.nrows)[1:]:  print sh.row(r)[:4]
+        for r in range(sh.nrows)[1:]: print(sh.row(r)[:4])
         
     def fileOpenSignatureFile(self):
         #FIXME: Find the way to close the datafilename
@@ -732,7 +723,7 @@ class Visual_Main(QtGui.QMainWindow, ui_gem_viewer.Ui_GemVisualGUI):
         #wroli_index_list = [self.wroli_index(pair) for pair in indices]
         wroli_index_list = [self.wroli_kees(pair) for pair in indices]
         self.combination(self._nclasses, dummy=1, data=wroli_index_list)
-        print 'done'
+        print('done')
         
         # DEBUGGING print self.wroli_index((0, 1))
         #try:
@@ -855,7 +846,7 @@ class Visual_Main(QtGui.QMainWindow, ui_gem_viewer.Ui_GemVisualGUI):
         print WROLI
         '''
         
-        print pairedClasses,WROLI
+        print(pairedClasses,WROLI)
         return WROLI
        
     def calculateClassStats(self):

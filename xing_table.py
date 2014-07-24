@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-__author__ = "Jose M. Beltran <gemtoolbox@gmail.com>"
+__author__ = "Jose M. Beltran <beltran.data@gmail.com>"
 __version__ = "0.1.0"
 
 from PyQt4 import QtCore, QtGui, Qt

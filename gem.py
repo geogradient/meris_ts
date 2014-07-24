@@ -146,8 +146,7 @@ class GEM_Image(object):
         
         self.src_path, self.name= os.path.split(fullPath)
         
-        print 'working with image: ',self.name
-       
+        print('working with image: ',self.name)
         self.dataset = og.Open(fullPath)
         # Getting image dimensions
         ncolumns = self.dataset.RasterXSize
@@ -208,7 +207,7 @@ class GEM_Image(object):
         to a previous created empty raster '''
         if self.out_filename == None: self.update() # It will updated itself if no out filename is given.
         self.status = None 
-        print 'updating pixel in',self.out_filename+self.outfileExt
+        print('updating pixel in',self.out_filename+self.outfileExt)
         fullpath = self.out_path+self.out_filename+self.outfileExt
         updatedataset = og.Open(fullpath,ogc.GA_Update)
         if currentPixelArray == None:
@@ -240,10 +239,10 @@ class GEM_Image(object):
         
         if self.out_filename == None: update() # It will updated itself if no out filename is given.
         if (self.name == (self.out_filename+self.outfileExt)):
-            print 'Creating an empty raster'
+            print('Creating an empty raster')
             update()
         self.status = None
-        print 'updating row in',self.out_filename+self.outfileExt
+        print('updating row in',self.out_filename+self.outfileExt)
         fullpath = self.out_path+self.out_filename+self.outfileExt
         updatedataset = og.Open(fullpath,ogc.GA_Update)
         if currentRowArray == None: # If array in not given, retrieve the one @ given row. This allows to write other arrays instead of the image. 

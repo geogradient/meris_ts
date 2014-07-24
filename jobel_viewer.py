@@ -1023,4 +1023,4 @@ class Ui_GemVisualGUI(object):
         self.actionExit.setText(_translate("GemVisualGUI", "Exit", None))
         self.actionOpenMaskDataset.setText(_translate("GemVisualGUI", "Mask Dataset", None))
 
-import icons_rc
+import icons
