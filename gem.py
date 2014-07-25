@@ -210,7 +210,8 @@ class GEM_Image(object):
         print('updating pixel in',self.out_filename+self.outfileExt)
         fullpath = self.out_path+self.out_filename+self.outfileExt
         updatedataset = og.Open(fullpath,ogc.GA_Update)
-        if currentPixelArray == None:
+        if currentPixelArray == None: /
+            home / jobel
             currentPixelArray= self.getPixelProfile(idx_row,idx_col)
         nbands = currentPixelArray.shape[0]
         for iband in range(nbands):
