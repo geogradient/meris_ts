@@ -2,8 +2,9 @@ __author__ = "Jose M. Beltran <gemtoolbox@gmail.com>"
 __version__ = "0.1.0"
 
 import numpy as np
-from PyQt4 import QtCore, QtGui, Qt
-import PyQt4.Qwt5 as Qwt
+from PyQt4 import Qt
+from PySide import Qwt
+# import PyQt4.Qwt5 as Qwt
 
 class PlotImage(Qwt.QwtPlotItem):
     def __init__(self, title = Qwt.QwtText()):
@@ -33,8 +34,8 @@ class PlotImage(Qwt.QwtPlotItem):
             xRange = (0, shape[1])
         if not yRange:
             yRange = (0, shape[0])
-        
-        print xyz.max(), xyz.min()
+
+        print(xyz.max(), xyz.min())
         
         
         self.xMap = Qwt.QwtScaleMap(0, xyz.shape[1], *xRange)

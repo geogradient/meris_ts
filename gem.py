@@ -93,20 +93,11 @@ Version 3.3 (March 27,2009)
 Updated: JAN 09, 2009
 '''
 import os
+
 import osgeo.gdal as og
 import numpy as np
 import osgeo.gdalconst as ogc
 import osgeo.gdal_array as oga
-
-from pylab import sqrt
-from pylab import dot
-from pylab import sum
-
-from scipy import r_ as r_
-from scipy import c_ as c_
-import time
-
-
 
 
 def combination(justalist):
@@ -210,8 +201,7 @@ class GEM_Image(object):
         print('updating pixel in',self.out_filename+self.outfileExt)
         fullpath = self.out_path+self.out_filename+self.outfileExt
         updatedataset = og.Open(fullpath,ogc.GA_Update)
-        if currentPixelArray == None: /
-            home / jobel
+        if currentPixelArray == None:
             currentPixelArray= self.getPixelProfile(idx_row,idx_col)
         nbands = currentPixelArray.shape[0]
         for iband in range(nbands):
